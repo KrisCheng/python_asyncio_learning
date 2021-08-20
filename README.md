@@ -1,6 +1,3 @@
-# python_asyncio_learning
+# asyncio_practice
 
-repo for learning python asyncio
-
-## Materials
-
+asyncio practice code demo.
