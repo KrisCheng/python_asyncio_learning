@@ -1,3 +1,3 @@
 # asyncio_practice
 
-asyncio practice code demo.
+asyncio practice code demos.
