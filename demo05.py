@@ -1,4 +1,5 @@
 # demo-05, yield and yield from compare
+# calculate the average of list
 
 from collections import namedtuple
 Result = namedtuple('Result', 'count average')
@@ -18,13 +19,15 @@ def averager():
     return Result(count, average)
 
 
-# the delegating generator, yield from 允许子生成器直接从调用者接收其发送的信息或者抛出调用时遇到的异常，并且返回给委派生成器一个值。
+# the delegating generator
+# yield from "establishes a transparent bidirectional 
+# connection between the caller and the sub-generator"
+# (from https://stackoverflow.com/questions/9708902/in-practice-what-are-the-main-uses-for-the-new-yield-from-syntax-in-python-3)
 def grouper(results, key):
     while True:
-        # 只有当生成器averager()结束，才会返回结果给results赋值
         results[key] = yield from averager()
 
-
+# yield from version
 def main(data):
     results = {}
     for key, values in data.items():
@@ -36,7 +39,7 @@ def main(data):
     report(results)
 
 
-# 如果不使用yield from，仅仅通过yield实现相同的效果
+# yield version
 def main2(data):
     for key, values in data.items():
         aver = averager()

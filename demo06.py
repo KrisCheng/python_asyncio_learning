@@ -2,7 +2,7 @@
 
 import asyncio
 
-# Python 3.4, deprecated in Python 3.8, not recommended.
+# Python 3.4, deprecated in Python 3.8, and removed in 3.10. not recommended.
 @asyncio.coroutine
 def hello_decorator():
     print("Hello world!")
@@ -17,10 +17,10 @@ async def hello_native():
     print("Hello again!")
 
 
-# 获取EventLoop:
+# get EventLoop
 loop = asyncio.get_event_loop()
 
-# 执行coroutine
+# run coroutine
 loop.run_until_complete(hello_native())
 
 loop.run_until_complete(hello_decorator())

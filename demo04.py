@@ -3,7 +3,7 @@
 # normal generator
 def gen():
     for c in 'AB':
-        yield c
+        yield c # single value
     for i in range(1, 3):
         yield i
 
