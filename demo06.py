@@ -11,7 +11,7 @@ def hello_decorator():
 
 
 # Python 3.5+
-async def hello_native():
+ def hello_native():
     print("Hello world!")
     r = await asyncio.sleep(1)
     print("Hello again!")
